@@ -7,7 +7,7 @@ dataPath = './program'
 personPath = dataPath + '/' + personName
 
 if not os.path.exists(personPath):
-    print('Carpeta creada: ', personPath)
+    print('carpeta creada: ', personPath)
     os.makedirs(personPath)
 
 cap = cv2.VideoCapture('Arnau.mp4')

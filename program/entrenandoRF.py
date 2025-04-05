@@ -34,4 +34,4 @@ face_recognizer.train(facesData,np.array(labels))
 
 #face_recognizer.write('ModeloEigenFace.xml')
 face_recognizer.write('ModeloFisherFace.xml')
-print('Storing model...')
+print('Storing model....')
