@@ -28,8 +28,122 @@
                 </ul>
             </div>
             <div id="Guide">
-                <h2>Guide</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga quas reprehenderit laudantium molestiae, suscipit iusto blanditiis. Iure, quis nobis nam qui quasi error necessitatibus dignissimos aspernatur voluptatum, esse quos veritatis?</p>
+                <h2>Guide: Facial Recognition</h2>
+            </div>
+            <div id="Guide">
+                <h3>First Step: Folder Structure</h3>
+                <p>Creation of the Main folder where you have the different videos and images to test facial recognition. <br> <br>
+
+                    Inside, we have an empty folder called Data, which is the folder where the faces of the people you want to recognize will be stored. <br> <br>
+                    
+                    Then we have another folder called Images and Videos, where we will place all the videos and images we want to recognize with our program. <br> <br>
+                    
+                    And finally, two loose videos in the folder that we will use to train the recognition of our program.</p> <br> <br>
+            
+                <h3>Step 2: Creating the Python file capturandoRostros.py</h3>
+                <ul>
+                    <li>We need to import the following packages: cv2, os, and imutils.</li> <br>
+                    <li>Create variables for the name of the video we want to recognize (to create a directory), and the directory where that video is located.</li>  <br>
+                    <li>If that directory with that name does not exist, we will create it.</li> <br>
+                    <li>Then we need to specify which video we will extract the faces from, which in our case will be "" (not sure yet, you’ll let me know what we’ve set).</li> <br>
+                    <li>Then we initialize the face detector.</li> <br>
+                    <li>We initialize a counter, and then we need to read each frame of the video. We also need to resize the frames in case they are too large, so that all images have the same size. The faces will be stored automatically.</li>
+                </ul>
+                <br>
+
+                <h3>Step 3: Facial recognition check + storage</h3>
+                <p>Finally, we will check by running the program that it saves frames in the created folder and scans the person’s face.</p>
+                <br>
+
+                <h2>Training</h2>
+
+                <h3>Creating the file entrenamientRF.py</h3>
+                <h4>File Tutorial</h4>
+                <ul>
+                    <li>We need to import the following packages: cv2, os, numpy, and np.</li> <br>
+                    <li>We create variables to store the path, and another to list the folders within the directory.</li>  <br>
+                    <li>The listed folders will be the ones created by our previous program in the Data directory.</li> <br>
+                    <li>We create two empty arrays called labels and facesData, which are used to store the photos of the people and recognize them by a label (If there were different photos of two people, person 1 would have label 1, and person 2 would have label 2).</li> <br>
+                    <li>Then we proceed to read each image from each person’s directory.</li> <br>
+                    <li>In the first for loop, we specify the directories we want to read the images from.</li> <br>
+                    <li>In the second for loop, we iterate through each image (where we also store the labels for each face, using a variable we previously created as a counter).</li> <br>
+                    <li>When we run the program, we will see it display each of the facial images.</li> <br>
+                </ul>
+                <br>
+                
+                <p><strong>Training Start:</strong></p>
+                <ul>
+                    <li><strong>First method:</strong> EigenFaceRecognizer_create()</li> <br>
+                    <ol>
+                        <li>Both training and prediction images must be in grayscale.</li> <br>
+                        <li>The eigenfaces method assumes that all images, whether training or test, must have the same size.</li> <br>
+                    </ol>
+                    <li><code>face_recognizer.train()</code></li> <br>
+                    <ol>
+                        <li>Training images.</li> <br>
+                        <li>The corresponding labels for the images.</li> <br>
+                    </ol>
+                    <li><code>face_recognizer.write()</code></li> <br>
+                    <ol>
+                        <li>Save the obtained model to be read in another script.</li> <br>
+                        <li>It is saved in XML or YAML format.</li> <br>
+                    </ol>
+                    <li>Once executed, we will see that it works and that the facial recognizer file has been created in our root directory.</li> <br>
+                </ul>
+                <br>
+
+                <h2>CHECKING THE FUNCTIONALITY OF THE FACE RECOGNIZER:</h2>
+                <h3>ReconocimientoFacial.py</h3>
+                <ul>
+                    <li>We import the packages <code>cv2</code> and <code>os</code>.</li> <br>
+                    <li>We specify the path again for the folders where the people we want to recognize are located, and we list them to get their names.</li> <br>
+                    <li>We do the same as in the previous program, calling the <code>EigenFaceRecognizer.create()</code> method.</li> <br>
+                    <li>Then, we read it using the <code>face_recognizer.read()</code> method, where we previously saved it in the last video (the .xml or .yaml).</li> <br>
+                    <li>We create the same loop from the first script.</li> <br>
+                    <li>Then, we need to specify the face; we will use the method <code>face_recognizer.predict()</code>.</li> <br>
+                    <ol>
+                        <li>It predicts a label and the associated confidence (for example, the distance) for a given input image.</li> <br>
+                    </ol>
+                    <li>When executing the program, it shows two numbers: the label and a value greater than 5000 depending on the person.</li> <br>
+                    <li>We will create a condition that, if these values match, will display the name of the person who has those values.</li> <br>
+                </ul>
+                <br>
+
+                <h2>FISHERFACES TRAINING:</h2>
+                <ul>
+                    <li>The code created for the previous training is also valid for this.</li> <br>
+                    <li>We need to modify a variable that says <code>EigenFaceRecognizer_create</code> to <code>FisherFaceRecognizer_create</code>.</li> <br>
+                    <ol>
+                        <li>Both training and prediction images must be in grayscale.</li> <br>
+                        <li>The fisherfaces method assumes that all images, whether training or test, must have the same size, as we configured earlier.</li> <br>
+                    </ol>
+                    <li>Change the filename of the XML to <code>modeloFisherface.xml</code> and run the training program.</li> <br>
+                </ul>
+                <br>
+
+                <h2>TESTING THE FISHERFACE MODEL:</h2>
+                <ul>
+                    <li>To test the program, we can use the same code created for the previous model; we just need to modify a few things.</li> <br>
+                    <li>Modify <code>face_recognizer</code> to <code>fisherface</code> and change the name to the one used before.</li> <br>
+                    <li>Comment out what corresponds to the previous model and create the necessary changes for this one.</li> <br>
+                    <li>The values given will be different from those provided by Eigenfaces, so the value we want to check will depend on the method being used and the results.</li> <br>
+                </ul>
+                <br>
+
+                <h2>LAST METHOD: LBPH:</h2>
+                <ul>
+                    <li>Modify <code>fisher</code> to <code>cv2.face.LBPHFaceRecognizer_create()</code>.</li> <br>
+                    <ol>
+                        <li>Both training and prediction images must be in grayscale.</li> <br>
+                    </ol>
+                    <li>The model will be stored in a different XML file, but we modify the name to <code>modeloLBPHFace.xml</code>.</li> <br>
+                    <li>We do the same for the verification model.</li> <br>
+                    <li>After running the program, the value will drop again depending on the person being recognized. This time it fluctuates between 50 and 70.</li> <br>
+                </ul>
+                <br>
+
+                <p>And this is how facial recognition works in Python. Depending on the value displayed and the label number, it will show the name of the person in the video, or if not recognized, it will show as "Unknown."</p>
+                <br>
             </div>
         </div>
     </main>
