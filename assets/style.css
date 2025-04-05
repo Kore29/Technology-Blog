@@ -1,17 +1,76 @@
+/**MAIN HERE**/
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     margin: 0;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgb(17, 17, 17);
+    font-family: 'Work Sans', sans-serif;
+    background-color: #686868;
 }
+
+/**NAV HERE**/
 
 #nav {
-    background-color: antiquewhite;
+    background-color: #7a7a7a;
     padding: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
+
+#nav li {
+    margin: 2vh 5%;
+    color: #e2e2e2;
+}
+
+.nav-btn {
+    font-size: 0.8vw;
+    padding-left: 27px;
+    padding-right: 27px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 3px;
+    background: #d5f365;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.nav-btn:hover {
+    box-shadow: 7px 5px 56px -14px #C3D900;
+}
+
+.nav-btn:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #C3D900;
+}
+
+/**HEADER HERE**/
 
 #header {
-    padding: 10px;
-    color:white;
-    background-color: aquamarine;
-
+    padding: 20px 10px;
+    color: #EFEFEF;
+    background-color: #505050;
 }
+
+#header h1,
+#header h2 {
+    margin: 0.5vw 2vw;
+    font-size: 250%;
+}
+
+/**CONTENT HERE**/
+
+#content {
+    color: #e2e2e2;
+    margin: 2vw;
+    font-size: 1.2rem;
+}
+
+#content p {
+    text-align: justify;
+}
+
+#content h2 {}
