@@ -58,16 +58,17 @@
                 </table>
             </div>
             <div id="guide">
-                <h2>Guide: Facial Recognition</h2>
+                <h2>Guide</h2>
+                <h3> Facial Recognition</h3>
 
-                <h3>Step 1: Folder Structure</h3>
+                <h4>Step 1: Folder Structure</h4>
                 <p>Creation of the Main folder where you have the different videos and images to test facial
                     recognition. Inside, we have an empty folder called Data, which is the folder where the faces of the
                     people you want to recognize will be stored. Then we have another folder called Images and Videos,
                     where we will place all the videos and images we want to recognize with our program. And finally,
                     two loose videos in the folder that we will use to train the recognition of our program.</p>
 
-                <h3>Step 2: Creating the Python file capturandoRostros.py</h3>
+                <h4>Step 2: Creating the Python file capturandoRostros.py</h4>
                 <ul>
                     <li>We need to import the following packages: cv2, os, and imutils.</li>
                     <li>Create variables for the name of the video we want to recognize (to create a directory), and the
@@ -87,15 +88,13 @@
                 <img src="https://i0.wp.com/blogs.embarcadero.com/wp-content/uploads/2020/12/aim_openCV-2855791-1024x597-7076175.jpg?resize=715%2C416&ssl=1"
                     alt="">
 
-                <h3>Step 3: Facial recognition check + storage</h3>
+                <h4>Step 3: Facial recognition check + storage</h4>
                 <p>Finally, we will check by running the program that it saves frames in the created folder and scans
                     the person’s face.</p>
 
 
-                <h2>Training</h2>
-
-                <h3>Creating the file entrenamientRF.py</h3>
-                <h4>File Tutorial</h4>
+                <h3>Training</h3>
+                <h4>File Tutorial: entrenamientoRF.py</h4>
                 <ul>
                     <li>We need to import the following packages: cv2, os, numpy, and np.</li>
                     <li>We create variables to store the path, and another to list the folders within the directory.
@@ -105,14 +104,12 @@
                         the people and recognize them by a label (If there were different photos of two people, person 1
                         would have label 1, and person 2 would have label 2).</li>
                     <li>Then we proceed to read each image from each person’s directory.</li>
-                    <li>In the first for loop, we specify the directories we want to read the images from.</li>
-                    <li>In the second for loop, we iterate through each image (where we also store the labels for each
-                        face, using a variable we previously created as a counter).</li>
+                    <li>In the first for loop, we specify the directories we want to read the images from.In the second for loop, we iterate through each image (where we also store the labels for each face, using a variable we previously created as a counter).</li>
                     <li>When we run the program, we will see it display each of the facial images.</li>
                 </ul>
 
 
-                <p><strong>Training Start:</strong></p>
+                <h4>Training Start:</h4>
                 <ul>
                     <li><strong>First method:</strong> EigenFaceRecognizer_create()</li>
                     <ol>
@@ -135,8 +132,8 @@
                 </ul>
 
 
-                <h2>CHECKING THE FUNCTIONALITY OF THE FACE RECOGNIZER:</h2>
-                <h3>ReconocimientoFacial.py</h3>
+                <h3>CHECKING THE FUNCTIONALITY</h3>
+                <h4>ReconocimientoFacial.py</h4>
                 <ul>
                     <li>We import the packages <code>cv2</code> and <code>os</code>.</li>
                     <li>We specify the path again for the folders where the people we want to recognize are located, and
@@ -152,6 +149,9 @@
                         <li>It predicts a label and the associated confidence (for example, the distance) for a given
                             input image.</li>
                     </ol>
+                </ul>
+                <h4>Testing:</h4>
+                <ul>
                     <li>When executing the program, it shows two numbers: the label and a value greater than 5000
                         depending on the person.</li>
                     <li>We will create a condition that, if these values match, will display the name of the person who
@@ -159,35 +159,37 @@
                 </ul>
 
 
-                <h2>FISHERFACES TRAINING:</h2>
-                <ul>
-                    <li>The code created for the previous training is also valid for this.</li>
-                    <li>We need to modify a variable that says <code>EigenFaceRecognizer_create</code> to
-                        <code>FisherFaceRecognizer_create</code>.</li>
-                    <ol>
-                        <li>Both training and prediction images must be in grayscale.</li>
-                        <li>The fisherfaces method assumes that all images, whether training or test, must have the same
-                            size, as we configured earlier.</li>
-                    </ol>
-                    <li>Change the filename of the XML to <code>modeloFisherface.xml</code> and run the training
-                        program.</li>
-                </ul>
+                <h3>FISHERFACES TRAINING</h3>
+                <h4>FisherFaceRecognizer_create</h4>
+                <p>The code created for the previous training is also valid for this.</p>
 
 
-                <h2>TESTING THE FISHERFACE MODEL:</h2>
+                <p>We need to modify a variable that says <code>EigenFaceRecognizer_create</code> to
+                    <code>FisherFaceRecognizer_create</code>.</p>
+                <ol>
+                    <li>Both training and prediction images must be in grayscale.</li>
+                    <li>The fisherfaces method assumes that all images, whether training or test, must have the samesize, as we configured earlier.</li>
+                </ol>
+                <p>Change the filename of the XML to <code>modeloFisherface.xml</code> and run the trainingprogram.</p>
+
+
+                <h3>TESTING THE FISHERFACE MODEL</h3>
+                
+                <p>To test the program, we can use the same code created for the previous model; we just need to
+                    modify a few things.</p>
+                <h4>Fisherface</h4>
+
+                <p>Modify <code>face_recognizer</code> to <code>fisherface</code> and change the name to the one
+                used before.</p>
                 <ul>
-                    <li>To test the program, we can use the same code created for the previous model; we just need to
-                        modify a few things.</li>
-                    <li>Modify <code>face_recognizer</code> to <code>fisherface</code> and change the name to the one
-                        used before.</li>
                     <li>Comment out what corresponds to the previous model and create the necessary changes for this
-                        one.</li>
+                    one.</li>
                     <li>The values given will be different from those provided by Eigenfaces, so the value we want to
                         check will depend on the method being used and the results.</li>
                 </ul>
 
 
-                <h2>LAST METHOD: LBPH:</h2>
+                <h3>LAST METHOD, LBPH</h3>
                 <ul>
                     <li>Modify <code>fisher</code> to <code>cv2.face.LBPHFaceRecognizer_create()</code>.</li>
                     <ol>
@@ -195,6 +197,9 @@
                     </ol>
                     <li>The model will be stored in a different XML file, but we modify the name to
                         <code>modeloLBPHFace.xml</code>.</li>
+                </ul>
+                <h4>Running it!</h4>
+                <ul>
                     <li>We do the same for the verification model.</li>
                     <li>After running the program, the value will drop again depending on the person being recognized.
                         This time it fluctuates between 50 and 70.</li>
