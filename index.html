@@ -67,8 +67,9 @@
                     people you want to recognize will be stored. Then we have another folder called Images and Videos,
                     where we will place all the videos and images we want to recognize with our program. And finally,
                     two loose videos in the folder that we will use to train the recognition of our program.</p>
+                <img class="img-design" src="./assets/img/Captura de pantalla 2025-04-09 175835.png" alt="folder-structure" style="width: 400px; height: auto;">
 
-                <h4>Step 2: Creating the Python file capturandoRostros.py</h4>
+                <h4>Step 2: Creating the Python file capturedFaces.py</h4>
                 <ul>
                     <li>We need to import the following packages: cv2, os, and imutils.</li>
                     <li>Create variables for the name of the video we want to recognize (to create a directory), and the
@@ -81,12 +82,7 @@
                         resize the frames in case they are too large, so that all images have the same size. The faces
                         will be stored automatically.</li>
                 </ul>
-
-
-                <img src="https://viso.ai/wp-content/smush-webp/2022/04/object-detection-opencv-demo-1060x529.png.webp"
-                    alt="">
-                <img src="https://i0.wp.com/blogs.embarcadero.com/wp-content/uploads/2020/12/aim_openCV-2855791-1024x597-7076175.jpg?resize=715%2C416&ssl=1"
-                    alt="">
+                <img class="img-design" src="assets/img/Captura de pantalla 2025-04-09 181222.png" alt="folder-structure" style="width: 400px; height: auto; ">
 
                 <h4>Step 3: Facial recognition check + storage</h4>
                 <p>Finally, we will check by running the program that it saves frames in the created folder and scans
@@ -94,7 +90,7 @@
 
 
                 <h3>Training</h3>
-                <h4>File Tutorial: entrenamientoRF.py</h4>
+                <h4>File Tutorial: trainingRF.py</h4>
                 <ul>
                     <li>We need to import the following packages: cv2, os, numpy, and np.</li>
                     <li>We create variables to store the path, and another to list the folders within the directory.
@@ -107,6 +103,7 @@
                     <li>In the first for loop, we specify the directories we want to read the images from.In the second for loop, we iterate through each image (where we also store the labels for each face, using a variable we previously created as a counter).</li>
                     <li>When we run the program, we will see it display each of the facial images.</li>
                 </ul>
+                <img class="img-design" src="assets/img/Captura de pantalla 2025-04-09 181559.png" alt="folder-structure" style="width: 400px; height: auto; ">
 
 
                 <h4>Training Start:</h4>
@@ -129,6 +126,8 @@
                     </ol>
                     <li>Once executed, we will see that it works and that the facial recognizer file has been created in
                         our root directory.</li>
+                    <img class="img-design" src="assets/img/Captura de pantalla 2025-04-09 181853.png" alt="folder-structure" style="width: 400px; height: auto; ">
+                    
                 </ul>
 
 
@@ -154,6 +153,8 @@
                 <ul>
                     <li>When executing the program, it shows two numbers: the label and a value greater than 5000
                         depending on the person.</li>
+                    <img class="img-design" src="assets/img/Captura de pantalla 2025-04-09 181708.png" alt="folder-structure" style="width: 400px; height: auto; ">
+
                     <li>We will create a condition that, if these values match, will display the name of the person who
                         has those values.</li>
                 </ul>
